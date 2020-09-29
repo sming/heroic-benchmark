@@ -1,7 +1,6 @@
-package com.spotify.heroic.benchmarks.arithmetic.series;
+package com.spotify.heroic.benchmarks.arithmetic.series.inbuilt;
 
-import com.spotify.heroic.benchmarks.arithmetic.series.exp4j.Expression4jBenchmarkTest;
-import org.NativeBenchmarkTest;
+import com.spotify.heroic.benchmarks.arithmetic.series.exp4j.OperatorFactoryImpl;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -9,9 +8,9 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 public class BenchmarkRunner {
 
-    private static Options buildOptions(Class foo) {
+    private static Options buildOptions(Class klass) {
         return new OptionsBuilder()
-            .include(Class.class.getSimpleName())
+            .include(klass.getSimpleName())
             .threads(4)
             .forks(1)
             .build();
@@ -19,12 +18,17 @@ public class BenchmarkRunner {
 
     public static void main(String[] args) throws RunnerException {
         {
-            Options opt = buildOptions(NativeBenchmarkTest.class);
+            Options opt = buildOptions(OperatorFactoryImpl.class);
             new Runner(opt).run();
         }
 
         {
-            Options opt = buildOptions(Expression4jBenchmarkTest.class);
+            Options opt = buildOptions(com.spotify.heroic.benchmarks.arithmetic.series.inbuilt.OperatorFactoryImpl.class);
+            new Runner(opt).run();
+        }
+
+        {
+            Options opt = buildOptions(com.spotify.heroic.benchmarks.arithmetic.series.mxparser.OperatorFactoryImpl.class);
             new Runner(opt).run();
         }
     }

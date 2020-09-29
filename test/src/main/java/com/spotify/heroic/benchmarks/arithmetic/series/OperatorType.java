@@ -23,48 +23,11 @@
  * questions.
  */
 
-package org;
+package com.spotify.heroic.benchmarks.arithmetic.series;
 
-import com.spotify.heroic.benchmarks.arithmetic.series.BenchmarkState;
-import com.spotify.heroic.benchmarks.arithmetic.series.BenchmarkTest;
-import org.openjdk.jmh.annotations.Benchmark;
-
-public class NativeBenchmarkTest implements BenchmarkTest {
-
-    @Override
-    @Benchmark
-    public void testDivisionWithNSeries(BenchmarkState state) {
-        // TODO
-        final double result = state.datum.get("A") / state.datum.get("B");
-    }
-
-    @Override
-    public void testMultiplicationWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testSubtractionWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testAdditionWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression1WithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression2WithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression3WithNSeries(BenchmarkState state) {
-
-    }
+public enum OperatorType {
+    ADD,
+    SUB,
+    MUL,
+    DIV
 }

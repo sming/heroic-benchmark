@@ -23,48 +23,8 @@
  * questions.
  */
 
-package com.spotify.heroic.benchmarks.arithmetic.series.exp4j;
+package com.spotify.heroic.benchmarks.arithmetic.series;
 
-import com.spotify.heroic.benchmarks.arithmetic.series.BenchmarkState;
-import com.spotify.heroic.benchmarks.arithmetic.series.BenchmarkTest;
-import org.openjdk.jmh.annotations.Benchmark;
-
-@SuppressWarnings("ALL")
-public class Expression4jBenchmarkTest implements BenchmarkTest {
-
-    @Override
-    public void testDivisionWithNSeries(BenchmarkState state) {
-        // TODO
-        final double result = state.expression.setVariables(state.datum).evaluate();
-    }
-
-    @Override
-    public void testMultiplicationWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testSubtractionWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testAdditionWithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression1WithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression2WithNSeries(BenchmarkState state) {
-
-    }
-
-    @Override
-    public void testCompoundExpression3WithNSeries(BenchmarkState state) {
-
-    }
+public interface OperatorFactory {
+    public Operator createOperator(OperatorType operatorType);
 }
