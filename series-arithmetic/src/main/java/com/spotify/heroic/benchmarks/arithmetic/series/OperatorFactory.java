@@ -25,6 +25,8 @@
 
 package com.spotify.heroic.benchmarks.arithmetic.series;
 
+import java.util.function.BiFunction;
+
 public interface OperatorFactory {
-    public Operator createOperator(OperatorType operatorType);
+    public BiFunction<Double, Double, Double> createOperator(OperatorType operatorType);
 }

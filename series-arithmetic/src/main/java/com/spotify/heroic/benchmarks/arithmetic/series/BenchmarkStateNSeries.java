@@ -1,12 +1,18 @@
 package com.spotify.heroic.benchmarks.arithmetic.series;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
-import java.util.*;
 
 /**
- * NOTE that this class is unused at present as it's more flexible than we need.
+ * NOTE that this class is unused at present as it's more flexible than we need,
+ * in that it supports operations upon many series when in fact almost all Use
+ * Cases are of simply A / B.
  */
 @State(Scope.Benchmark)
 public class BenchmarkStateNSeries {
