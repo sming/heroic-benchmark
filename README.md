@@ -13,3 +13,11 @@ other annotation-based lib), ***do not trust*** IntelliJ’s
 
 1. Simple Series arithmetic
 
+## Running the Benchmarks
+
+1. currently there's only `BenchmarkRunner.main` as an entrypoint so
+simply run that
+1. supply `devMode` as a parameter when coding this repo, so that you
+can see if your changes work, without having to wait a long time for
+benchmarking to finish. 
+
