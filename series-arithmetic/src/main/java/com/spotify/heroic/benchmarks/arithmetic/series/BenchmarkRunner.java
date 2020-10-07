@@ -15,12 +15,14 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 /**
  * The entrypoint to this benchmarking tool.
+ * Note that we use a fairly low number of iterations. That's because each
+ * iteration is itself millions of arithmetic calculations.
  */
 public class BenchmarkRunner {
     public static void main(String[] args) throws RunnerException {
         int forks = 3;  // each fork is like a fresh JVM instance
-        int warmupIterations = 10;  // # iterations to warm up CPU caches etc.
-        int measurementIterations = 15; // # iterations in actual benchmarking
+        int warmupIterations = 4;  // # iterations to warm up CPU caches etc.
+        int measurementIterations = 8; // # iterations in actual benchmarking
 
         // If we're running in development mode, we just want a quick run to confirm
         // our e.g. annotation changes - are correct.
